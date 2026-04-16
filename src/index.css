@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+
+@theme {
+  --font-headline: "Manrope", "Noto Sans SC", sans-serif;
+  --font-body: "Inter", "Noto Sans SC", sans-serif;
+  --font-label: "Inter", "Noto Sans SC", sans-serif;
+
+  --color-surface: #faf8ff;
+  --color-on-surface: #191b23;
+  --color-on-surface-variant: #434655;
+  --color-primary: #004ac6;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #2563eb;
+  --color-on-primary-container: #eeefff;
+  --color-surface-container-low: #f3f3fe;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e7e7f3;
+  --color-outline-variant: #c3c6d7;
+  --color-tertiary-container: #007d55;
+  --color-on-tertiary-container: #bdffdb;
+  --color-error: #ba1a1a;
+  --color-primary-fixed: #dbe1ff;
+  --color-on-primary-fixed-variant: #003ea8;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-body antialiased;
+  }
+}
+
+/* Element Plus 与站点色板对齐（ElMessage 等函数式组件） */
+:root {
+  --el-color-primary: #004ac6;
+  --el-color-success: #007d55;
+  --el-color-warning: #b45309;
+  --el-color-danger: #ba1a1a;
+  --el-color-error: #ba1a1a;
+  --el-border-radius-base: 12px;
+  --el-font-family: var(--font-body);
+}
+
+.el-message {
+  border-radius: 0.75rem !important;
+  border: 1px solid color-mix(in oklab, var(--color-outline-variant) 40%, transparent) !important;
+  background-color: var(--color-surface-container-lowest) !important;
+  box-shadow: 0 12px 40px -8px rgba(0, 74, 198, 0.12) !important;
+  padding: 12px 18px !important;
+}
+
+.el-message .el-message__content {
+  color: var(--color-on-surface) !important;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+}
+
+.cta-gradient {
+  background: linear-gradient(135deg, #004ac6 0%, #2563eb 100%);
+}
+
+.glass-card {
+  background: rgba(225, 226, 237, 0.6);
+  backdrop-filter: blur(12px);
+}
+
+.premium-shadow {
+  box-shadow: 0 12px 32px -4px rgba(0, 74, 198, 0.08);
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
